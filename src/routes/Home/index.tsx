@@ -8,18 +8,14 @@ import "./styles.css";
 
 const Home = () => {
   const [isBottom, setIsBottom] = useState(false);
-  const { data, loading } = usePokemon(isBottom);
+  const { data } = usePokemon(isBottom);
 
   const { toCheckBottom } = useScrollYPosition();
 
   useEffect(() => {
     const { winHeight, scrollY, docHeight } = toCheckBottom;
-    setIsBottom(winHeight + scrollY === docHeight);
+    setIsBottom(winHeight + scrollY >= docHeight - 20);
   }, [toCheckBottom]);
-
-  if (loading) {
-    return <>Loading</>;
-  }
 
   return (
     <div className="container">

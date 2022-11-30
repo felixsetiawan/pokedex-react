@@ -7,7 +7,13 @@ const Card = ({ data }: { data: IPokeDetailList }) => {
     <div className="container">
       <div>{data.id}</div>
       <div>{data.name}</div>
-      <img src={data.image} />
+      <img
+        src={data.image}
+        width="200"
+        height="200"
+        alt={data.name}
+        loading="lazy"
+      />
     </div>
   );
 };

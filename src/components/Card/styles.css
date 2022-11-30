@@ -2,3 +2,8 @@
     display: flex;
     border: solid 1px black;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
